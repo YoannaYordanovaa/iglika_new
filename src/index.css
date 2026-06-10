@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* ─── Google Fonts ──────────────────────────────────────────────
+   Noto Serif  → заглавия, цитати, акценти
+   Montserrat  → навигация, тяло, бутони, UI елементи
+   
+   Зареждаме само нужните тегла, за да пазим скорост:
+   Noto Serif  : 400 (regular), 400i (italic), 600 (semibold), 600i
+   Montserrat  : 300, 400, 500, 600, 700
+   subset=cyrillic е задължителен!
+─────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&subset=cyrillic&display=swap');
+
+/* ─── CSS Custom Properties (дизайн токени) ─────────────────── */
+:root {
+  /* Шрифтове */
+  --font-serif:   "Noto Serif", Georgia, serif;
+  --font-sans:    Montserrat, system-ui, sans-serif;
+
+  /* Цветова палитра */
+  --color-green-50:  #EAF3DE;
+  --color-green-600: #4A7C1F;
+  --color-green-800: #2E5210;
+  --color-green-900: #1B3309;
+  --color-gold-50:   #FDF8EC;
+  --color-gold-400:  #D4A017;
+  --color-gold-600:  #A87B0F;
+  --color-orange-600:#C86A10;
+  --color-neutral-50: #FAFAF7;
+  --color-neutral-800:#1E1D16;
+
+  /* Типографска скала */
+  --text-display-xl: clamp(2rem, 5vw, 3.25rem);
+  --text-display-lg: clamp(1.625rem, 4vw, 2.5rem);
+  --text-display-md: clamp(1.25rem, 3vw, 1.875rem);
+  --text-body:       1rem;
+  --leading-display: 1.2;
+  --leading-body:    1.8;
+
+  /* Spacing */
+  --section-padding: clamp(3rem, 8vw, 5rem);
+}
+
+/* ─── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-neutral-800);
+  background-color: #ffffff;
+}
+
+/* ─── Типографски помощни класове ───────────────────────────── */
+
+/* Заглавия — Noto Serif */
+.font-serif          { font-family: var(--font-serif); }
+.heading-display-xl  { font-family: var(--font-serif); font-size: var(--text-display-xl); line-height: var(--leading-display); font-weight: 600; }
+.heading-display-lg  { font-family: var(--font-serif); font-size: var(--text-display-lg); line-height: 1.25; font-weight: 600; }
+.heading-display-md  { font-family: var(--font-serif); font-size: var(--text-display-md); line-height: 1.35; font-weight: 600; }
+
+/* Eyebrow label — над заглавие */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Цитат — italic Noto Serif */
+.quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.375rem);
+  line-height: 1.7;
+  color: var(--color-green-800);
+}
+
+/* ─── Utility: section spacing ───────────────────────────────── */
+.section {
+  padding-block: var(--section-padding);
+}
+
+/* ─── @font-face fallback (намалява layout shift) ───────────── */
+@font-face {
+  font-family: 'Montserrat Fallback';
+  src: local('Arial');
+  ascent-override: 96.8%;
+  descent-override: 25.1%;
+  line-gap-override: 0%;
+  size-adjust: 101.24%;
+}

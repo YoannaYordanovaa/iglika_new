@@ -16,9 +16,9 @@ function useInView(threshold = 0.1) {
   return [ref, inView]
 }
 
-const VIBER_NUMBER  = '359888000000'   // ← смени с реалния
+const VIBER_NUMBER  = '+359 88 766 3362'   // ← смени с реалния
 const VIBER_URL     = `viber://chat?number=%2B${VIBER_NUMBER}`
-const PHONE_DISPLAY = '+359 888 000 000' // ← смени с реалния
+const PHONE_DISPLAY = '+359 88 766 3362' // ← смени с реалния
 
 export default function Contact() {
   const [sectionRef, inView] = useInView()
@@ -50,7 +50,7 @@ export default function Contact() {
             Свържи се с мен
           </h2>
           <p className="font-sans text-[15px] text-neutral-500 max-w-[38ch] mx-auto leading-[1.8]">
-            Без задължения, без натиск. Просто честен разговор.
+            Нищо не е задължително - разговаряме спокойно и ти решаваш какво е правилно за теб.
           </p>
         </div>
 

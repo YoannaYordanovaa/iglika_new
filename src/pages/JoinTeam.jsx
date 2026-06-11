@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import Footer from "../components/Footer";
 
-const VIBER_NUMBER = "359888000000";
+const VIBER_NUMBER = "+359 88 766 3362";
 const WHATSAPP_MSG = encodeURIComponent(
   "Здравей, Иглика! Интересувам се от присъединяване към екипа ти.",
 );
@@ -27,9 +27,9 @@ const PHOTOS = {
 // ── Данни ──────────────────────────────────────────────────────
 const FLP_FACTS = [
   { num: "45+", label: "години на пазара" },
-  { num: "9.3 млрд", label: "долара оборот годишно" },
+  { num: "40+ млн", label: "алое растения годишно" },
   { num: "160+", label: "страни по света" },
-  { num: "9.5 млн", label: "дистрибутори глобално" },
+  { num: "1.4 млн", label: "проверки за качество" },
 ];
 
 const BENEFITS = [
@@ -46,12 +46,12 @@ const BENEFITS = [
   {
     icon: "🕐",
     title: "Пълна свобода",
-    desc: "Ти решаваш кога, как и колко работиш. Съвместимо с всеки начин на живот.",
+    desc: "Ти решаваш кога, как и колко да работиш. Съвместимо с всеки начин на живот.",
   },
   {
     icon: "🤝",
     title: "Екип и подкрепа",
-    desc: "Не тръгваш сам. Иглика е до теб с обучение, опит и лична подкрепа.",
+    desc: "Не тръгваш сам. Аз и екипа сме до теб във всяко обучение, опит и подкрепа.",
   },
   {
     icon: "📈",
@@ -61,7 +61,7 @@ const BENEFITS = [
   {
     icon: "✈️",
     title: "Пътувания и награди",
-    desc: "Компанията награждава успеха с пътувания, коли и бонуси на световно ниво.",
+    desc: "Компанията награждава успеха с пътувания, награди и бонуси на световно ниво.",
   },
 ];
 
@@ -106,67 +106,54 @@ const RANKS = [
 
 const INCENTIVES = [
   {
-    icon: "🎁",
-    title: "Стартов бонус",
-    tag: "Веднага",
+    icon: "",
+    title: "Forever2Drive (Автомобилна програма)",
     tagColor: "bg-green-50 text-green-700",
-    desc: "При достигане на определен оборот в първите месеци получаваш еднократен паричен бонус.",
+    desc: "Мечтаеш ли за нов автомобил или свободата да покриваш лични разходи с лекота? Тази програма ти осигурява допълнителен месечен бонус в размер на €400, €600 или €800 за период от 36 месеца. Ти решаваш за какво да ги използваш – за нова кола, вноска по ипотека или образование на децата.",
     highlight: null,
   },
   {
-    icon: "🚗",
-    title: "Автомобилна програма",
-    tag: "Асистент директор+",
+    icon: "",
+    title: "Eagle Manager (Мениджър 'Орел')",
     tagColor: "bg-gold-50 text-gold-800",
-    desc: "Forever Living поема разходите за кола — лизинг или еднократна сума — за всеки достигнал нивото.",
+    desc: "Програмата, която отличава лидерите, изграждащи стабилен и балансиран бизнес. Квалификацията като „Орел“ ти носи изцяло платено пътуване за двама до екзотична дестинация по света. Там ще преминеш през ексклузивни обучения от топ мениджмънта на компанията и ще обмениш опит с най-добрите в бранша.",
     highlight: "Месечна вноска покрита от компанията",
   },
   {
-    icon: "✈️",
-    title: "Програма Eagles",
-    tag: "Мениджър+",
+    icon: "",
+    title: "Global Rally (Глобално рали)",
     tagColor: "bg-gold-50 text-gold-800",
-    desc: "Ежегодно пътуване на екзотична дестинация за теб и партньора ти — напълно платено от компанията.",
+    desc: "Най-мащабното събитие на годината! Форевър събира хиляди собственици на бизнес на различни красиви кътчета от планетата (Дубай, Лондон, Бахамите и много други). Твоята квалификация ти осигурява самолетни билети, настаняване в луксозни хотели и джобни пари – изцяло поети от компанията.",
     highlight: "Бали, Малдиви, Дубай, Мексико...",
   },
   {
-    icon: "🏆",
-    title: "Директорски бонус",
-    tag: "Директор",
+    icon: "",
+    title: "Chairman's Bonus (Бонус на Председателя)",
     tagColor: "bg-orange-50 text-orange-700",
-    desc: "Годишен бонус за директори на база общия оборот на цялата мрежа — глобален дял от успеха на FLP.",
+    desc: "Познат още като „тринадесетата заплата“ във Форевър. Компанията отделя процент от своя глобален годишен оборот и го разпределя под формата на мащабни финансови чекове. Това е най-високото признание за лидерите, които помагат на хората в екипа си също да растат.",
     highlight: "Дял от световния оборот на компанията",
   },
   {
-    icon: "🎖️",
-    title: "Рали и конференции",
-    tag: "Всички нива",
+    icon: "",
+    title: "Бонус „Скъпоценни камъни“ (Gem Bonus)",
     tagColor: "bg-neutral-100 text-neutral-600",
-    desc: "Редовни регионални и международни събития за обучение, вдъхновение и признание на успехите.",
+    desc: "Колкото повече помагаш на хората от първа линия да развиват своите мениджърски екипи, толкова повече расте и твоят доход. Този стимул добавя между 1% и 3% допълнителен бонус върху оборота на целия ти екип, което може почти да удвои месечните ти приходи.",
     highlight: null,
-  },
-  {
-    icon: "💎",
-    title: "Диамантен бонус",
-    tag: "Топ лидери",
-    tagColor: "bg-orange-50 text-orange-700",
-    desc: "Специална програма за топ лидери с множество директорски линии — пасивен доход на най-високо ниво.",
-    highlight: "Пожизнена финансова независимост",
   },
 ];
 
 const TEAM_QUOTES = [
   {
-    name: "Мария П.",
-    role: "Мениджър, Пловдив",
-    text: "За 2 години изградих екип от 40 човека. Колата дойде по-бързо отколкото очаквах.",
-    initials: "МП",
+    name: "Венета П.",
+    role: "Мениджър, Варна",
+    text: "Моето вдъхновение за пълна промяна и успех!!! Тя вярва в хората, повече отколкото всеки от нас вярва в себе си и подкрепя безусловно! Обичам я от цялото си сърце!",
+    initials: "ВП",
     color: "bg-green-50 text-green-800",
   },
   {
-    name: "Светла Д.",
+    name: "Йоанна Й.",
     role: "Супервайзор, София",
-    text: "Eagles в Дубай беше мечта, която стана реалност. Благодаря на Иглика за вярата в мен.",
+    text: "Иглика е любов и вдъхновение за всички около себе си. За мен тя е пример за успешна жена, която не е забравила как да бъде нежна и любяща. Пример за това как любовта отваря и привидно най-здраво залостените врати. 🌸",
     initials: "СД",
     color: "bg-gold-50 text-gold-800",
   },
@@ -308,7 +295,7 @@ export default function JoinTeam() {
       <main>
         {/* ══ 1. HERO ════════════════════════════════════════ */}
         <section
-          className="relative bg-green-50 min-h-[580px] flex items-center overflow-hidden"
+          className="relative bg-green-50 h-[calc(100vh-4rem)] flex items-center overflow-hidden"
           aria-labelledby="join-heading"
         >
           <div className="absolute inset-0">
@@ -327,7 +314,7 @@ export default function JoinTeam() {
 
           <div className="relative z-10 max-w-content mx-auto px-5 sm:px-8 py-24">
             <div className="max-w-[600px]">
-              <p className=" text-amber-300 mb-5 flex items-center gap-2 ">
+              <p className=" text-white mb-5 flex items-center gap-2 ">
                 <span
                   className="inline-block w-6 h-px bg-gold-400"
                   aria-hidden="true"
@@ -342,24 +329,24 @@ export default function JoinTeam() {
                 <br />
                 който <em className="not-italic text-gold-400">заслужаваш</em>
               </h1>
-              <p className="font-sans text-[15.5px] text-white/80 leading-[1.85] mb-10 max-w-[48ch]">
-                Присъедини се към екипа на Иглика и открий как хиляди хора по
-                света изграждат допълнителен доход, пътуват по света и живеят по
-                свои правила — с продукти, в които вярват.
+              <p className="font-sans text-[15.5px] text-white/80 leading-[1.6] mb-10 max-w-[48ch]">
+                Твоето време, твоите правила. Присъедини се към моя екип и
+                разбери как хиляди хора превръщат споделянето на продукти, в
+                които вярват, в допълнителен доход, вълнуващи пътувания и
+                истинска свобода. Направи първата стъпка днес!
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#whyflp"
-             
                   className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-800
                          text-white font-sans font-semibold text-[13.5px]
-                         px-6 py-3 rounded-pill transition-colors duration-200"
+                         px-6 py-3 rounded-pill transition-colors duration-200  rounded-4xl "
                 >
                   Искам да разбера повече
                 </a>
                 <a
                   href="#programi"
-                  className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-sans font-medium text-[14px] px-7 py-3.5 rounded-pill transition-colors duration-200"
+                  className="inline-flex  rounded-4xl  items-center gap-2 border border-white/30 hover:border-white/60 text-white font-sans font-medium text-[14px] px-7 py-3.5 rounded-pill transition-colors duration-200"
                 >
                   Виж програмите ↓
                 </a>
@@ -397,7 +384,7 @@ export default function JoinTeam() {
                   id="flp-heading"
                   className="font-serif font-semibold text-green-900 text-[1.85rem] sm:text-[2.2rem] leading-[1.25] mb-5"
                 >
-                  Компания с 60 години
+                  Компания с над 45 години
                   <br />
                   <em className="not-italic text-orange-600">
                     доказано качество
@@ -405,17 +392,32 @@ export default function JoinTeam() {
                 </h2>
                 <div className="space-y-4 mb-8">
                   <p className="font-sans text-[14.5px] text-neutral-600 leading-[1.85]">
-                    Forever Living Products е основана през 1978 г. от Rex
-                    Maughan с една проста идея — да достави най-чистото алое
-                    вера директно до хората, без посредници. Днес компанията е
-                    лидер в производството на алое вера продукти с присъствие в
-                    над 160 страни.
+                    Основана през 1978 г. от Рекс Моан, Forever Living Products
+                    е финансово стабилна компания, оперираща в над 160 държави.
+                    Известна като „The Aloe Vera Company“, тя е{" "}
+                    <b>
+                      най-големият производител и преработвател на продукти с
+                      алое вера в Света .
+                    </b>
                   </p>
                   <p className="font-sans text-[14.5px] text-neutral-600 leading-[1.85]">
-                    Моделът на директни продажби дава на всеки дистрибутор
-                    реална възможност за изграждане на собствен бизнес — с
-                    подкрепата на световна компания зад гърба му и продукти, в
-                    които хората се връщат отново и отново.
+                    Forever контролира целия процес – от собствените си
+                    плантации в Тексас и Доминиканската република до крайния
+                    потребител. Продуктите се изработват от{" "}
+                    <b>
+                      чист, стабилизиран гел от Aloe Barbadensis Miller,
+                      отгледан без изкуствени пестициди.
+                    </b>
+                  </p>
+                  <p className="font-sans text-[14.5px] text-neutral-600 leading-[1.85]">
+                    Освен всичко останало, компанията предлага и сигурен бизнес
+                    модел за изграждане на международни екипи онлайн или офлайн.
+                    За разлика от други МЛМ компании,{" "}
+                    <b>
+                      {" "}
+                      веднъж достигнатото ниво на квалификация и отстъпка тук
+                      никога не се губи.
+                    </b>
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -460,7 +462,7 @@ export default function JoinTeam() {
                   {/* Floating badge */}
                   <div className="absolute -bottom-3 -left-4 bg-white border border-neutral-100 rounded-2xl px-4 py-3 shadow-sm">
                     <p className="font-sans font-semibold text-[13px] text-green-900 leading-none mb-0.5">
-                      №1 в алое вера
+                      №1 производител на Алое Вера
                     </p>
                     <p className="font-sans text-[11px] text-neutral-400">
                       в световен мащаб
@@ -562,7 +564,7 @@ export default function JoinTeam() {
               </p>
               <h2
                 id="team-heading"
-                className="font-serif font-semibold text-green-900 text-[1.85rem] sm:text-[2.2rem] leading-[1.25] mb-3"
+                className="font-serif font-semibold text-green-900 text-[1.85rem] sm:text-[2.2rem] leading-tight mb-3"
               >
                 Хора, които избраха
                 <br />
@@ -570,7 +572,7 @@ export default function JoinTeam() {
               </h2>
               <p className="font-sans text-[14.5px] text-neutral-500 max-w-[44ch] mx-auto leading-[1.75]">
                 Обикновени хора с извънредни резултати. Майки, учители,
-                служители — всички с една обща черта: решиха да опитат.
+                служители - всички взели решение да действат.
               </p>
             </div>
 
@@ -622,7 +624,9 @@ export default function JoinTeam() {
               {/* Цитат карта вместо снимка */}
               <div className="rounded-2xl bg-green-50 p-7 h-56 flex flex-col justify-between">
                 <p className="font-serif italic text-[1rem] text-gold-400 leading-[1.7]">
-                  „Ако се присъединиш към моя екип с времето ще можеш да печелиш според усилията си и да бъдеш сред хора, които вярват в теб дори повече, отколкото ти вярваш в себе си."
+                  „Ако се присъединиш към моя екип с времето ще можеш да печелиш
+                  според усилията си и да бъдеш сред хора, които вярват в теб
+                  дори повече, отколкото ти вярваш в себе си."
                 </p>
                 <p className="font-sans text-[12px] font-semibold text-gold-400 uppercase tracking-wider">
                   — Иглика Величкова
@@ -761,7 +765,6 @@ export default function JoinTeam() {
           </div>
         </section>
 
-       
         {/* ═════════ ФИНАЛЕН CTA ═════════ */}
         <section
           ref={ctaRef}
@@ -785,7 +788,7 @@ export default function JoinTeam() {
                     className="inline-block w-5 h-px bg-orange-400"
                     aria-hidden="true"
                   />
-                  Готова ли си?
+                  Готов ли си?
                 </p>
                 <h2
                   id="cta-heading"
@@ -796,8 +799,8 @@ export default function JoinTeam() {
                   <em className="not-italic text-orange-600">промени всичко</em>
                 </h2>
                 <p className="font-sans text-[14.5px] text-neutral-500 leading-[1.85] max-w-[44ch]">
-                  Без задължения, без натиск. Разговаряме честно и ти решаваш
-                  дали това е пътят за теб.
+                  Нищо не е задължително - разговаряме спокойно и ти решаваш
+                  какво е правилно за теб.
                 </p>
               </div>
 
@@ -811,7 +814,7 @@ export default function JoinTeam() {
                      bg-[#7360F2] hover:bg-[#5a4bd1] text-white
                      font-sans font-semibold text-[14.5px]
                      px-8 py-4 rounded-pill
-                     transition-colors duration-200 w-full lg:w-auto"
+                     transition-colors duration-200 w-full lg:w-auto rounded-4xl "
                 >
                   <ViberIcon size={17} />
                   Пиши ми в Viber
@@ -822,7 +825,7 @@ export default function JoinTeam() {
                      border-[1.5px] border-green-600 text-green-800
                      hover:bg-green-50 font-sans font-medium text-[14px]
                      px-8 py-4 rounded-pill
-                     transition-colors duration-200 w-full lg:w-auto"
+                     transition-colors duration-200 w-full lg:w-auto rounded-4xl "
                 >
                   Разгледай продуктите
                 </a>

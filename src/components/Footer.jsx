@@ -79,11 +79,9 @@ export default function Footer() {
           </p>
           <ul className="space-y-2.5">
             {[
-              { to: "/", label: "Начало" },
-              { to: "/#za-men", label: "За мен" },
+              { to: "/", label: "За мен" },
               { to: "/produkti", label: "Продукти" },
               { to: "/prisaedini-se", label: "Присъедини се" },
-              { to: "/#kontakti", label: "Контакти" },
             ].map(({ to, label }) => (
               <li key={to}>
                 <Link

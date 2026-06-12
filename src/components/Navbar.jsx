@@ -49,11 +49,9 @@ function AnchorLink({ to, label, className, onClick, onActivate }) {
 }
 
 const NAV_LINKS = [
-  { to: "/",              label: "Начало",       scrollTop: true },
+  { to: "/",              label: "За мен",       scrollTop: true },
   { to: "/produkti",      label: "Продукти"                      },
   { to: "/prisaedini-se", label: "Присъедини се"                 },
-  { to: "/#za-men",       label: "За мен",       anchor: true    },
-  { to: "/#kontakti",     label: "Контакти",     anchor: true    },
 ];
 
 const VIBER_NUMBER = "359887663362";

@@ -8,13 +8,7 @@ const WHATSAPP_MSG = encodeURIComponent(
 const VIBER_URL = `viber://chat?number=%2B${VIBER_NUMBER}`;
 
 // ── Снимки ─────────────────────────────────────────────────────
-// Качи снимките в src/assets/ със следните имена:
-//   join-hero.jpg          1200x700  — Иглика с екипа, групова
-//   join-team-1.jpg         800x600  — Иглика с хора от екипа
-//   join-team-2.jpg         600x800  — портрет с партньор
-//   join-team-3.jpg         800x600  — събитие / среща
-//   join-team-4.jpg         800x600  — lifestyle с екипа
-//   join-team-5.jpg         600x800  — партньор lifestyle
+
 const PHOTOS = {
   hero: "/src/assets/DSC_8880.jpg",
   team1: "/src/assets/DSC_7407.jpeg",
@@ -65,79 +59,46 @@ const BENEFITS = [
   },
 ];
 
-const RANKS = [
-  {
-    name: "Дистрибутор",
-    level: 1,
-    color: "bg-neutral-100 text-neutral-600",
-    desc: "Стартова позиция. Купуваш на цена дистрибутор и препродаваш на пазарна цена.",
-  },
-  {
-    name: "Асистент мениджър",
-    level: 2,
-    color: "bg-green-50 text-green-700",
-    desc: "Изграждаш малък екип. Получаваш процент от продажбите на твоите партньори.",
-  },
-  {
-    name: "Мениджър",
-    level: 3,
-    color: "bg-green-100 text-green-800",
-    desc: "Ключова стъпка. Отключваш по-висок процент от груповия оборот.",
-  },
-  {
-    name: "Супервайзор",
-    level: 4,
-    color: "bg-gold-50 text-gold-800",
-    desc: "Изграден стабилен екип. Пасивен доход от множество нива.",
-  },
-  {
-    name: "Асистент директор",
-    level: 5,
-    color: "bg-gold-100 text-gold-900",
-    desc: "Сериозен месечен доход. Допустимост за автомобилна програма.",
-  },
-  {
-    name: "Директор",
-    level: 6,
-    color: "bg-orange-50 text-orange-800",
-    desc: "Топ ниво на доходи. Пълна финансова свобода и глобално признание.",
-  },
-];
 
 const INCENTIVES = [
   {
-    icon: "",
+    icon: "🚗",
     title: "Forever2Drive (Автомобилна програма)",
+    tag:"До €800/месец",
     tagColor: "bg-green-50 text-green-700",
-    desc: "Мечтаеш ли за нов автомобил или свободата да покриваш лични разходи с лекота? Тази програма ти осигурява допълнителен месечен бонус в размер на €400, €600 или €800 за период от 36 месеца. Ти решаваш за какво да ги използваш – за нова кола, вноска по ипотека или образование на децата.",
-    highlight: null,
-  },
-  {
-    icon: "",
-    title: "Eagle Manager (Мениджър 'Орел')",
-    tagColor: "bg-gold-50 text-gold-800",
-    desc: "Програмата, която отличава лидерите, изграждащи стабилен и балансиран бизнес. Квалификацията като „Орел“ ти носи изцяло платено пътуване за двама до екзотична дестинация по света. Там ще преминеш през ексклузивни обучения от топ мениджмънта на компанията и ще обмениш опит с най-добрите в бранша.",
+    desc: "Допълнителен месечен бонус от €400, €600 или €800 за период от 36 месеца. Използвай го за нова кола, вноска по дом или лични цели.",
     highlight: "Месечна вноска покрита от компанията",
   },
   {
-    icon: "",
+    icon: "🦅",
+    title: "Eagle Manager (Мениджър 'Орел')",
+    tag:"Пътувай по света",
+    tagColor: "bg-amber-50 text-gold-800",
+    desc: "Изцяло платено луксозно пътуване за двама до екзотична дестинация, съчетано с ексклузивни обучения на световно ниво.",
+    highlight: null,
+  },
+  {
+    icon: "🌍",
     title: "Global Rally (Глобално рали)",
+    tag: "Годишно събитие",
     tagColor: "bg-gold-50 text-gold-800",
-    desc: "Най-мащабното събитие на годината! Форевър събира хиляди собственици на бизнес на различни красиви кътчета от планетата (Дубай, Лондон, Бахамите и много други). Твоята квалификация ти осигурява самолетни билети, настаняване в луксозни хотели и джобни пари – изцяло поети от компанията.",
+    desc: "Най-мащабното събитие на годината. Форевър поема твоите самолетни билети, петзвездни хотели и джобни пари до топ дестинация по света.",
     highlight: "Бали, Малдиви, Дубай, Мексико...",
   },
   {
-    icon: "",
+    icon: "💰",
     title: "Chairman's Bonus (Бонус на Председателя)",
+    tag:"Топ лидери",
     tagColor: "bg-orange-50 text-orange-700",
-    desc: "Познат още като „тринадесетата заплата“ във Форевър. Компанията отделя процент от своя глобален годишен оборот и го разпределя под формата на мащабни финансови чекове. Това е най-високото признание за лидерите, които помагат на хората в екипа си също да растат.",
+    desc: "Твоята „тринадесета заплата“. Компанията споделя проценти от глобалния си годишен оборот под формата на мащабни финансови чекове.",
     highlight: "Дял от световния оборот на компанията",
   },
   {
-    icon: "",
+    icon: "💎",
     title: "Бонус „Скъпоценни камъни“ (Gem Bonus)",
+    tag:"Пасивен доход",
     tagColor: "bg-neutral-100 text-neutral-600",
-    desc: "Колкото повече помагаш на хората от първа линия да развиват своите мениджърски екипи, толкова повече расте и твоят доход. Този стимул добавя между 1% и 3% допълнителен бонус върху оборота на целия ти екип, което може почти да удвои месечните ти приходи.",
+    desc: "Допълнителни 1% до 3% бонус върху оборота на мениджърите в екипа ти, които умножават твоите дългосрочни доходи.",
     highlight: null,
   },
 ];
@@ -280,6 +241,36 @@ function ViberIcon({ size = 17 }) {
   );
 }
 
+function ScrollDots({ count, containerRef }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    function onScroll() {
+      const cardWidth = el.scrollWidth / count;
+      const index = Math.round(el.scrollLeft / cardWidth);
+      setActive(Math.min(Math.max(index, 0), count - 1));
+    }
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, [count, containerRef]);
+
+  return (
+    <div className="flex sm:hidden justify-center gap-1.5 mt-5" aria-hidden="true">
+      {Array.from({ length: count }).map((_, i) => (
+        <span
+          key={i}
+          className={[
+            "h-1.5 rounded-full transition-all duration-300",
+            i === active ? "w-5 bg-green-600" : "w-1.5 bg-neutral-200",
+          ].join(" ")}
+        />
+      ))}
+    </div>
+  );
+}
+
 // ══ КОМПОНЕНТ ══════════════════════════════════════════════════
 export default function JoinTeam() {
   const [flpRef, flpInView] = useInView();
@@ -289,6 +280,9 @@ export default function JoinTeam() {
   const [ranksRef, ranksInView] = useInView();
   const [stepsRef, stepsInView] = useInView();
   const [ctaRef, ctaInView] = useInView();
+
+  const benefitsScrollRef = useRef(null);
+  const incentivesScrollRef = useRef(null);
 
   return (
     <>
@@ -507,12 +501,20 @@ export default function JoinTeam() {
                 Шест причини да кажеш „да"
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div
+              ref={benefitsScrollRef}
+              className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5
+                         overflow-x-auto sm:overflow-visible
+                         -mx-5 px-5 sm:mx-0 sm:px-0
+                         snap-x snap-mandatory sm:snap-none
+                         scrollbar-none"
+            >
               {BENEFITS.map(({ icon, title, desc }, i) => (
                 <div
                   key={title}
                   className={
                     "bg-white border border-neutral-100 rounded-2xl p-6 transition-all duration-500 ease-out " +
+                    "flex-shrink-0 w-[80%] sm:w-auto snap-center " +
                     (benefitsInView
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-6")
@@ -533,6 +535,7 @@ export default function JoinTeam() {
                 </div>
               ))}
             </div>
+            <ScrollDots count={BENEFITS.length} containerRef={benefitsScrollRef} />
           </div>
         </section>
 
@@ -717,13 +720,21 @@ export default function JoinTeam() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div
+              ref={incentivesScrollRef}
+              className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5
+                         overflow-x-auto sm:overflow-visible
+                         -mx-5 px-5 sm:mx-0 sm:px-0
+                         snap-x snap-mandatory sm:snap-none
+                         scrollbar-none"
+            >
               {INCENTIVES.map(
                 ({ icon, title, tag, tagColor, desc, highlight }, i) => (
                   <div
                     key={title}
                     className={
                       "bg-white border border-neutral-100 rounded-2xl p-6 flex flex-col transition-all duration-500 ease-out " +
+                      "flex-shrink-0 w-[80%] sm:w-auto snap-center " +
                       (incentivesInView
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-6")
@@ -762,6 +773,7 @@ export default function JoinTeam() {
                 ),
               )}
             </div>
+            <ScrollDots count={INCENTIVES.length} containerRef={incentivesScrollRef} />
           </div>
         </section>
 

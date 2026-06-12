@@ -116,7 +116,7 @@ export default function About() {
   return (
     <section
       id="za-men"
-      className="bg-white overflow-hidden"
+      className="bg-white overflow-hidden scroll-mt-16"
       aria-labelledby="about-heading"
     >
       {/* ══ ХЕДЪР ══════════════════════════════════════════ */}

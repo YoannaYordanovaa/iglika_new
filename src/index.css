@@ -55,6 +55,9 @@
   --container-prose: 42rem;
 }
 
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -257,6 +260,10 @@ body {
   color: #4A7C1F;
 }
 
+@media (min-width: 1024px) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg) !important;
+  }}
 
 /* ─── @font-face fallback (намалява layout shift) ───────────── */
 @font-face {

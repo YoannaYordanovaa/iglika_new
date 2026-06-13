@@ -15,7 +15,7 @@ function Logo() {
       <img
         src="/src/assets/Logo.svg"
         alt="Иглика Величкова"
-        className="h-38 w-auto object-contain"
+        className="h-60 w-auto object-contain"
       />
     </a>
   );
@@ -50,8 +50,8 @@ function AnchorLink({ to, label, className, onClick, onActivate }) {
 
 const NAV_LINKS = [
   { to: "/",              label: "За мен",       scrollTop: true },
-  { to: "/produkti",      label: "Продукти"                      },
-  { to: "/prisaedini-se", label: "Присъедини се"                 },
+  { to: "/products",      label: "Продукти"                      },
+  { to: "/join", label: "Присъедини се към екипа"                 },
 ];
 
 const VIBER_NUMBER = "359887663362";

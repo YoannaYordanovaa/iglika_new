@@ -59,12 +59,11 @@ const BENEFITS = [
   },
 ];
 
-
 const INCENTIVES = [
   {
     icon: "🚗",
     title: "Forever2Drive (Автомобилна програма)",
-    tag:"До €800/месец",
+    tag: "До €800/месец",
     tagColor: "bg-green-50 text-green-700",
     desc: "Допълнителен месечен бонус от €400, €600 или €800 за период от 36 месеца. Използвай го за нова кола, вноска по дом или лични цели.",
     highlight: "Месечна вноска покрита от компанията",
@@ -72,7 +71,7 @@ const INCENTIVES = [
   {
     icon: "🦅",
     title: "Eagle Manager (Мениджър 'Орел')",
-    tag:"Пътувай по света",
+    tag: "Пътувай по света",
     tagColor: "bg-amber-50 text-gold-800",
     desc: "Изцяло платено луксозно пътуване за двама до екзотична дестинация, съчетано с ексклузивни обучения на световно ниво.",
     highlight: null,
@@ -88,7 +87,7 @@ const INCENTIVES = [
   {
     icon: "💰",
     title: "Chairman's Bonus (Бонус на Председателя)",
-    tag:"Топ лидери",
+    tag: "Топ лидери",
     tagColor: "bg-orange-50 text-orange-700",
     desc: "Твоята „тринадесета заплата“. Компанията споделя проценти от глобалния си годишен оборот под формата на мащабни финансови чекове.",
     highlight: "Дял от световния оборот на компанията",
@@ -96,7 +95,7 @@ const INCENTIVES = [
   {
     icon: "💎",
     title: "Бонус „Скъпоценни камъни“ (Gem Bonus)",
-    tag:"Пасивен доход",
+    tag: "Пасивен доход",
     tagColor: "bg-neutral-100 text-neutral-600",
     desc: "Допълнителни 1% до 3% бонус върху оборота на мениджърите в екипа ти, които умножават твоите дългосрочни доходи.",
     highlight: null,
@@ -124,29 +123,6 @@ const TEAM_QUOTES = [
     text: "Започнах с 0 опит. Днес имам стабилен пасивен доход и пътувам всяка година с Eagles.",
     initials: "КМ",
     color: "bg-orange-50 text-orange-700",
-  },
-];
-
-const STEPS = [
-  {
-    num: "01",
-    title: "Свържи се с мен",
-    desc: "Едно съобщение в WhatsApp. Разговаряме без натиск — разказвам ти реално как работи.",
-  },
-  {
-    num: "02",
-    title: "Опознаваме се",
-    desc: "Споделям конкретна информация за доходите, продуктите и програмите за стимулиране.",
-  },
-  {
-    num: "03",
-    title: "Вземаш решение",
-    desc: "Само ти решаваш. Никога не убеждавам — важно е да искаш това за себе си.",
-  },
-  {
-    num: "04",
-    title: "Стартираш с подкрепа",
-    desc: "Аз съм до теб от ден 1. Обучение, стратегия и лична подкрепа на всяка стъпка.",
   },
 ];
 
@@ -178,7 +154,7 @@ function Photo({ src, alt, label, className = "" }) {
     return (
       <div
         className={
-          "bg-green-50 border-2 border-dashed border-green-200 flex flex-col items-center justify-center gap-2 text-green-400 " +
+          "bg-green-50 border-2 border-dashed border-green-200 flex flex-col items-center justify-center gap-2 text-green-600 " +
           className
         }
       >
@@ -227,6 +203,19 @@ function WhatsAppIcon({ size = 17 }) {
   );
 }
 
+function UserPlusIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+         strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <line x1="19" y1="8" x2="19" y2="14"/>
+      <line x1="16" y1="11" x2="22" y2="11"/>
+    </svg>
+  )
+}
+
 function ViberIcon({ size = 17 }) {
   return (
     <svg
@@ -257,7 +246,10 @@ function ScrollDots({ count, containerRef }) {
   }, [count, containerRef]);
 
   return (
-    <div className="flex sm:hidden justify-center gap-1.5 mt-5" aria-hidden="true">
+    <div
+      className="flex sm:hidden justify-center gap-1.5 mt-5"
+      aria-hidden="true"
+    >
       {Array.from({ length: count }).map((_, i) => (
         <span
           key={i}
@@ -268,6 +260,84 @@ function ScrollDots({ count, containerRef }) {
         />
       ))}
     </div>
+  );
+}
+
+function StickyCTA() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      // Появява се след hero секцията (~80% от viewport height)
+      setVisible(window.scrollY > window.innerHeight * 0.8);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <>
+      <style>{`
+        @keyframes ctaPulse {
+          0%, 100% { box-shadow: 0 4px 16px rgba(74,124,31,0.35), 0 0 0 0 rgba(74,124,31,0.4); }
+          50%      { box-shadow: 0 4px 16px rgba(74,124,31,0.35), 0 0 0 8px rgba(74,124,31,0); }
+        }
+        .cta-pulse { animation: ctaPulse 2.5s ease-out infinite; }
+      `}</style>
+
+      {/* Мобилно — pill лента на цяла ширина */}
+      <div
+        className={[
+          "fixed bottom-0 left-0 right-0 z-40 md:hidden",
+          "pt-10 pb-4 px-5",
+          "bg-gradient-to-t from-white via-white/95 to-transparent",
+          "transition-all duration-300 ease-out",
+          visible
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 translate-y-4 pointer-events-none",
+        ].join(" ")}
+        aria-hidden={!visible}
+      >
+        <a
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full
+                      bg-green-600 hover:bg-green-800 text-white
+                     font-sans font-semibold text-[14px]
+                     px-6 py-3 rounded-4xl
+                     shadow-[0_4px_16px_rgba(115,96,242,0.35)]
+                     transition-colors duration-200 mb-5"
+        >
+           <UserPlusIcon size={16} /> Линк за присъединяване
+        </a>
+      </div>
+
+      {/* Десктоп — компактна зелена pill долу вдясно, пулсира */}
+      <div
+        className={[
+          "hidden md:block fixed bottom-6 right-6 z-40",
+          "transition-all duration-300 ease-out",
+          visible
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 translate-y-4 pointer-events-none",
+        ].join(" ")}
+        aria-hidden={!visible}
+      >
+        <a
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-pulse flex items-center gap-2
+                     bg-green-600 hover:bg-green-800 text-white
+                     font-sans font-semibold text-[13.5px]
+                     px-6 py-3 rounded-4xl
+                     transition-colors duration-200"
+        >
+           <UserPlusIcon size={16} /> Линк за присъединяване
+        </a>
+      </div>
+    </>
   );
 }
 
@@ -471,13 +541,25 @@ export default function JoinTeam() {
         {/* ══ 3. ПОЛЗИ ═══════════════════════════════════════ */}
         <section
           ref={benefitsRef}
-          className="bg-[#FAFAF7] py-20 sm:py-24"
+          className="relative overflow-hidden bg-[#FAFAF7] py-20 sm:py-24"
           aria-labelledby="benefits-heading"
         >
-          <div className="max-w-content mx-auto px-5 sm:px-8">
+          <div className="max-w-content relative mx-auto px-5 sm:px-8">
+            {/* Декоративни кръгове */}
+            <div
+              aria-hidden="true"
+              className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full
+                 bg-orange-100 opacity-60 pointer-events-none z-0"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full
+                 bg-green-50 opacity-70 pointer-events-none z-0"
+            />
+
             <div
               className={
-                "text-center mb-12 transition-all duration-600 ease-out " +
+                "text-center z-10 mb-12 transition-all duration-600 ease-out " +
                 (benefitsInView
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4")
@@ -503,7 +585,7 @@ export default function JoinTeam() {
             </div>
             <div
               ref={benefitsScrollRef}
-              className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5
+              className="relative z-10 flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5
                          overflow-x-auto sm:overflow-visible
                          -mx-5 px-5 sm:mx-0 sm:px-0
                          snap-x snap-mandatory sm:snap-none
@@ -535,7 +617,10 @@ export default function JoinTeam() {
                 </div>
               ))}
             </div>
-            <ScrollDots count={BENEFITS.length} containerRef={benefitsScrollRef} />
+            <ScrollDots
+              count={BENEFITS.length}
+              containerRef={benefitsScrollRef}
+            />
           </div>
         </section>
 
@@ -773,7 +858,10 @@ export default function JoinTeam() {
                 ),
               )}
             </div>
-            <ScrollDots count={INCENTIVES.length} containerRef={incentivesScrollRef} />
+            <ScrollDots
+              count={INCENTIVES.length}
+              containerRef={incentivesScrollRef}
+            />
           </div>
         </section>
 
@@ -825,18 +913,18 @@ export default function JoinTeam() {
                   className="inline-flex items-center justify-center gap-2
                      bg-[#7360F2] hover:bg-[#5a4bd1] text-white
                      font-sans font-semibold text-[14.5px]
-                     px-8 py-4 rounded-pill
+                     px-6 py-3 rounded-pill
                      transition-colors duration-200 w-full lg:w-auto rounded-4xl "
                 >
                   <ViberIcon size={17} />
                   Пиши ми в Viber
                 </a>
                 <a
-                  href="/produkti"
+                  href="/products"
                   className="inline-flex items-center justify-center
                      border-[1.5px] border-green-600 text-green-800
                      hover:bg-green-50 font-sans font-medium text-[14px]
-                     px-8 py-4 rounded-pill
+                     px-6 py-3 rounded-pill
                      transition-colors duration-200 w-full lg:w-auto rounded-4xl "
                 >
                   Разгледай продуктите
@@ -849,6 +937,7 @@ export default function JoinTeam() {
           </div>
         </section>
       </main>
+      <StickyCTA />
       <Footer />
     </>
   );

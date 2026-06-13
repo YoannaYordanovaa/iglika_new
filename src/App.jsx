@@ -24,9 +24,9 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/produkti" element={<Products />} />
-        <Route path="/prisaedini-se" element={<JoinTeam />} />
-        <Route path="/obshti-uslovia" element={<Terms />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/join" element={<JoinTeam />} />
+        <Route path="/Terms-and-Conditions" element={<Terms />} />
       </Routes>
     </BrowserRouter>
   )

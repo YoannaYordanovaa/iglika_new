@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 function useInView(threshold = 0.1) {
   const ref = useRef(null);
@@ -21,11 +22,6 @@ function useInView(threshold = 0.1) {
   return [ref, inView];
 }
 
-// ── Снимки — замени с реалните paths след качване ──────────────
-// Препоръчителни размери: 800x600px или 600x800px (portrait)
-// about-1.jpg — семейна снимка
-// about-2.jpg — снимка с екипа / успех
-// about-3.jpg — личен момент / lifestyle
 const PHOTOS = {
   p1: "/src/assets/414.png",
   p2: "/src/assets/DSC_5757.jpeg",
@@ -75,7 +71,7 @@ function Photo({ src, alt, label, className = "" }) {
     return (
       <div
         className={
-          "bg-green-50 border-2 border-dashed border-green-200 flex flex-col items-center justify-center gap-2 text-green-400 " +
+          "bg-green-50 border-2 border-dashed border-green-200 flex flex-col items-center justify-center gap-2 text-green-600 " +
           className
         }
       >
@@ -115,7 +111,7 @@ export default function About() {
 
   return (
     <section
-      id="za-men"
+      id="about"
       className="bg-white overflow-hidden scroll-mt-16"
       aria-labelledby="about-heading"
     >
@@ -187,6 +183,68 @@ export default function About() {
           isLast={i === ROWS.length - 1}
         />
       ))}
+
+      {/* ═════════ ФИНАЛЕН CTA ═════════ */}
+      <div className="bg-white pt-0 pb-14 sm:py-16" aria-labelledby="cta-heading">
+        <div className="max-w-content mx-auto px-5 sm:px-8">
+          <div
+            className={[
+              "grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center",
+              "transition-all duration-700 ease-out",
+            ]}
+          >
+            {/* Текст вляво */}
+            <div>
+              <p className="eyebrow text-orange-600 mb-4 flex items-center gap-2">
+                <span
+                  className="inline-block w-5 h-px bg-orange-400"
+                  aria-hidden="true"
+                />
+                Готов ли си?
+              </p>
+              <h2
+                id="cta-heading"
+                className="font-serif font-semibold text-green-900
+                     text-[1.75rem] sm:text-[2.1rem] leading-[1.25] mb-4"
+              >
+                Присъедини се към моя екип и открий{" "}
+                <em className="not-italic text-orange-600">
+                  какво е възможно за теб!
+                </em>
+              </h2>
+              <p className="font-sans text-[14.5px] text-neutral-500 leading-[1.85] max-w-[44ch]">
+                Нека ти разкажа повече за моя опит и за това как можеш да започнеш и ти.
+              </p>
+            </div>
+
+            {/* Бутони вдясно */}
+           <div className="flex flex-col items-start lg:items-end justify-center gap-3 h-full">
+              {" "}
+              <a
+                href="#about"
+                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-800
+                         text-white font-sans font-semibold text-[13.5px]
+                         px-6 py-3 rounded-pill transition-colors duration-200 rounded-4xl"
+              >
+                Присъедини се към моя екип
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -200,11 +258,9 @@ function Row({ year, title, text, photo, alt, label, reverse, index, isLast }) {
   return (
     <div
       ref={ref}
-      className={[
-        bg,
-        "border-t border-neutral-100",
-        isLast ? "border-b" : "",
-      ].join(" ")}
+      className={[bg, "border-t border-none", isLast ? "border-b" : ""].join(
+        " ",
+      )}
     >
       <div className="max-w-content mx-auto">
         <div
@@ -267,7 +323,7 @@ function Row({ year, title, text, photo, alt, label, reverse, index, isLast }) {
           <div
             className={[
               "relative overflow-hidden order-1 md:order-0",
-              "min-h-[280px] sm:min-h-[340px] md:min-h-0" ,
+              "min-h-[280px] sm:min-h-[340px] md:min-h-0",
               "transition-all duration-700 ease-out delay-150",
               inView
                 ? "opacity-100 translate-x-0"
@@ -279,15 +335,15 @@ function Row({ year, title, text, photo, alt, label, reverse, index, isLast }) {
             {/* Декоративен фон */}
             <div
               aria-hidden="true"
-              className="absolute inset-4 bg-green-50 "
-              style={{ borderRadius: "60px 4px 60px 4px" }}
+              className="absolute inset-4 bg-green-50   "
+              style={{ borderRadius: "60px 0px 60px 0px" }}
             />
 
             {/* Снимката */}
             <div
               className="absolute inset-0 m-6 overflow-hidden"
               style={{
-                borderRadius: "60px 4px 60px 4px",
+                borderRadius: "60px 0px 60px 0px",
                 boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
               }}
             >

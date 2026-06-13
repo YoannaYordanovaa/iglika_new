@@ -92,32 +92,32 @@ function ProductCard({ product }) {
           }}
         />
       </div>
-      <div className="p-4 flex flex-col flex-1">
+      <div className="p-3 sm:p-4 flex flex-col flex-1">
         <h3
-          className="font-serif font-semibold text-[16px] text-green-900
+          className="font-serif font-semibold text-[13px] sm:text-[15px] text-green-600
                        leading-snug mb-1 line-clamp-2"
         >
           {product.h1}
         </h3>
         <p
-          className="font-sans text-[14px] text-neutral-400 leading-[1.6]
+          className="font-sans text-[11px] sm:text-[13px] text-neutral-400 leading-[1.6]
                       line-clamp-2 mb-3 flex-1"
         >
           {product.h2}
         </p>
-        <div className="flex items-center justify-between gap-2 pt-3 border-t border-neutral-50">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-3 border-t border-neutral-50">
           <div>
             {/* Оригинална цена — зачеркната */}
-            <p className="font-sans text-[14px] text-neutral-400 line-through leading-none mb-0.5">
+            <p className="font-sans text-[11px] sm:text-[13px] text-neutral-400 line-through leading-none mb-0.5">
               €{toEuro(product.price)}
             </p>
             {/* Цена с отстъпка */}
             <div className="flex items-center gap-1.5">
-              <p className="font-sans font-semibold text-[1rem] text-green-800 leading-none">
+              <p className="font-sans font-semibold text-[0.95rem] text-green-600 leading-none">
                 €{toEuroDiscounted(product.price)}
               </p>
               <span
-                className="font-sans text-[14px] font-semibold bg-orange-50
+                className="font-sans text-[10px] sm:text-[12px] font-semibold bg-orange-50
                        text-orange-600 px-1.5 py-0.5 rounded-lg"
               >
                 -15%
@@ -127,11 +127,12 @@ function ProductCard({ product }) {
           <button
             onClick={handleOrder}
             disabled={ordering}
-            className="inline-flex items-center gap-1.5 flex-shrink-0
+            className="inline-flex items-center justify-center gap-1.5 flex-shrink-0
+                       w-full sm:w-auto
                        bg-green-600 hover:bg-green-800
                        disabled:opacity-60 disabled:cursor-wait
-                       text-white font-sans font-semibold text-[12px]  rounded-4xl 
-                       px-4 py-2 rounded-pill transition-colors duration-200"
+                       text-white font-sans font-semibold text-[12px] rounded-full
+                       px-4 py-2 transition-colors duration-200 "
           >
             {ordering ? (
               <>
@@ -194,7 +195,7 @@ function Pagination({ current, total, onChange }) {
         disabled={current === 1}
         className="w-9 h-9 flex items-center justify-center rounded-full
                          border border-neutral-200 text-neutral-500
-                         hover:border-green-400 hover:text-green-700
+                         hover:border-green-600 hover:text-green-700
                          disabled:opacity-30 disabled:cursor-default transition-colors"
         aria-label="Предишна страница"
       >
@@ -231,7 +232,7 @@ function Pagination({ current, total, onChange }) {
               "font-sans text-[13px] font-medium transition-colors",
               p === current
                 ? "bg-green-600 text-white"
-                : "border border-neutral-200 text-neutral-600 hover:border-green-400 hover:text-green-700",
+                : "border border-neutral-200 text-neutral-600 hover:border-green-600 hover:text-green-700",
             ].join(" ")}
           >
             {p}
@@ -243,7 +244,7 @@ function Pagination({ current, total, onChange }) {
         disabled={current === total}
         className="w-9 h-9 flex items-center justify-center rounded-full
                          border border-neutral-200 text-neutral-500
-                         hover:border-green-400 hover:text-green-700
+                         hover:border-green-600 hover:text-green-700
                          disabled:opacity-30 disabled:cursor-default transition-colors"
         aria-label="Следваща страница"
       >
@@ -331,9 +332,6 @@ export default function Products() {
 
   useEffect(() => {
     setPage(1);
-    document
-      .getElementById("products-top")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [search, sortBy]);
 
   const filtered = useMemo(() => {
@@ -395,7 +393,7 @@ export default function Products() {
                 <li>
                   <Link
                     to="/"
-                    className="hover:text-green-700 transition-colors"
+                    className="hover:text-green-600 transition-colors"
                   >
                     Начало
                   </Link>
@@ -416,10 +414,10 @@ export default function Products() {
                 </li>
                 <li>
                   <Link
-                    to="/produkti"
+                    to="/products"
                     className={
                       activeCategory === "shop"
-                        ? "text-green-700 font-medium"
+                        ? "text-green-600 font-medium"
                         : "hover:text-green-700 transition-colors"
                     }
                   >
@@ -444,7 +442,7 @@ export default function Products() {
                     </li>
                     <li>
                       <span
-                        className="text-green-700 font-medium"
+                        className="text-green-600 font-medium"
                         aria-current="page"
                       >
                         {activeCat.label}
@@ -464,7 +462,7 @@ export default function Products() {
               Forever Living Products
             </p>
             <h1
-              className="font-serif font-semibold text-green-900
+              className="font-serif font-semibold text-green-600
                            text-[1.75rem] sm:text-[2.1rem] leading-[1.2]"
             >
               <span aria-hidden="true">{activeCat.emoji} </span>
@@ -541,10 +539,10 @@ export default function Products() {
                     className={[
                       "flex items-center gap-1.5 flex-shrink-0",
                       "font-sans font-medium text-[12.5px]",
-                      "px-3.5 py-2 rounded-pill transition-colors duration-200",
+                      "px-6 py-3 rounded-4xl transition-colors duration-200",
                       activeCategory === id
                         ? "bg-green-600 text-white"
-                        : "bg-white border border-neutral-200 text-neutral-600 hover:border-green-400",
+                        : "bg-white border border-neutral-200 text-neutral-600 hover:border-green-600",
                     ].join(" ")}
                   >
                     <span aria-hidden="true">{emoji}</span>
@@ -583,8 +581,8 @@ export default function Products() {
                                "
                   />
                 </div>
-                <div className="relative">
-                  {/* Стрелка вляво */}
+                <div className="relative w-full sm:w-auto">
+                  {/* Стрелка вдясно */}
                   <svg
                     className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none"
                     width="14"
@@ -603,7 +601,8 @@ export default function Products() {
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
                     className="appearance-none bg-white border border-neutral-200 rounded-xl
-               pl-4 pr-4 py-2.5 font-sans text-[13.5px] text-neutral-600
+               w-full sm:w-auto
+               pl-4 pr-9 py-2.5 font-sans text-[13.5px] text-neutral-600
                focus:outline-none focus:border-neutral-400
                transition-colors cursor-pointer"
                   >
@@ -627,7 +626,7 @@ export default function Products() {
 
               {/* Решетка */}
               {loading ? (
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                   {Array.from({ length: 6 }).map((_, i) => (
                     <SkeletonCard key={i} />
                   ))}
@@ -637,7 +636,7 @@ export default function Products() {
                   <p className="text-[2.5rem] mb-3" aria-hidden="true">
                     🌿
                   </p>
-                  <p className="font-serif font-semibold text-green-900 text-[1.2rem] mb-2">
+                  <p className="font-serif font-semibold text-green-600 text-[1.2rem] mb-2">
                     Няма намерени продукти
                   </p>
                   <p className="font-sans text-[14px] text-neutral-400">
@@ -646,10 +645,10 @@ export default function Products() {
                 </div>
               ) : (
                 <>
-                  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {currentItems.map((product) => (
+                  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+                    {currentItems.map((product, idx) => (
                       <ProductCard
-                        key={`${product.id}-${activeCategory}`}
+                        key={`${activeCategory}-${page}-${product.id}-${idx}`}
                         product={product}
                       />
                     ))}

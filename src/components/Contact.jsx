@@ -25,9 +25,9 @@ export default function Contact() {
 
   return (
     <section
-      id="kontakti"
+      id="contacts"
       ref={sectionRef}
-      className=" py-20 sm:py-28"
+      className=" py-20 sm:py-28 scroll-mt-16"
       aria-labelledby="contact-heading"
     >
       <div className="max-w-content mx-auto px-5 sm:px-8">
@@ -93,7 +93,7 @@ export default function Contact() {
             href={`tel:${VIBER_NUMBER}`}
             aria-label="Обади се на Иглика"
             className="flex items-center justify-center gap-2 w-full
-                       border border-neutral-200 hover:border-green-400
+                       border border-neutral-200 hover:border-green-600
                        bg-white hover:bg-green-50
                        text-neutral-600 hover:text-green-800
                        font-sans font-medium text-[14px]

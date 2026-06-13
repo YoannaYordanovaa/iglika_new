@@ -26,12 +26,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative bg-[#FAFAF7] overflow-hidden">
+    <section className="relative bg-[#FAFAF7] overflow-hidden  md:h-[calc(100vh-4rem)]">
       {/* ── Декоративен кръг горе вдясно ─────────────── */}
       <div
         aria-hidden="true"
         className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full
-                   bg-gold-50 opacity-60 pointer-events-none"
+                   bg-orange-100 opacity-60 pointer-events-none"
       />
       {/* Малък кръг долу вляво */}
       <div
@@ -51,7 +51,8 @@ export default function Hero() {
         {/* ── Лява колона — текст ───────────────────── */}
         <div
           className={[
-            "flex flex-col justify-center py-16 md:py-20 md:pr-10",
+            "flex flex-col justify-center pb-16 md:py-20 md:pt-16 md:pr-10" ,
+            "order-2 md:order-1",
             "transition-all duration-700 ease-out",
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
           ].join(" ")}
@@ -88,16 +89,29 @@ export default function Hero() {
           {/* CTA бутони */}
           <div className="flex flex-wrap gap-3 mb-9">
             <a
-              href="#za-men"
+              href="#about"
               className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-800
                          text-white font-sans font-semibold text-[13.5px]
                          px-6 py-3 rounded-pill transition-colors duration-200 rounded-4xl"
             >
               Разбери повече
+                <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
             </a>
 
             <a
-              href="#produkti"
+              href="#products"
               className="inline-flex items-center gap-1.5 border border-green-600
                          text-green-800 hover:bg-green-50 font-sans font-medium
                          text-[13.5px] px-6 py-3 rounded-pill transition-colors duration-200  rounded-4xl"
@@ -144,6 +158,7 @@ export default function Hero() {
           className={[
             "relative flex justify-center md:justify-end items-end",
             "pb-0 md:pb-0 pt-4 md:pt-0",
+            "order-1 md:order-2",
             "transition-all duration-700 ease-out delay-150",
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
           ].join(" ")}
@@ -153,8 +168,8 @@ export default function Hero() {
             aria-hidden="true"
             className="absolute bottom-0 right-4 md:right-0
                        w-[88%] md:w-[82%] h-[92%]
-                       rounded-t-[120px] rounded-b-3xl
-                       bg-green-50 border border-green-100"
+                       rounded-tr-[120px] rounded-bl-xl
+                       bg-green-50"
           />
 
           {/* Снимката */}
@@ -163,32 +178,13 @@ export default function Hero() {
               src={HERO_IMAGE}
               alt="Иглика Величкова — консултант по здравословен начин на живот"
               className="relative z-10 w-full object-cover object-top
-                         rounded-t-[110px] rounded-b-2xl
+                         rounded-tr-[110px] rounded-bl-xl
                          aspect-[3/4]"
               loading="eager"
             />
 
-            {/* Плаващ badge — опит */}
-            <div
-              className="absolute z-20 top-6 -left-4 sm:-left-6
-                         bg-white border border-neutral-100 shadow-sm
-                         rounded-2xl px-4 py-2.5 flex items-center gap-2.5"
-              aria-label="10 години опит"
-            >
-              <span className="text-xl" aria-hidden="true">
-                🌿
-              </span>
-              <div>
-                <p className="font-sans font-semibold text-[13px] text-green-900 leading-none mb-0.5">
-                  10+ години опит
-                </p>
-                <p className="font-sans text-[11px] text-neutral-500 leading-none">
-                  в подкрепа на хората
-                </p>
-              </div>
-            </div>
 
-            {/* Плаващ badge — клиенти */}
+            {/* Плаващ badge */}
             <div
               className="absolute z-20 bottom-10 -right-4 sm:-right-6
                          bg-white border border-neutral-100 shadow-sm
@@ -196,14 +192,14 @@ export default function Hero() {
               aria-label="500 доволни клиенти"
             >
               <span className="text-xl" aria-hidden="true">
-                💛
+                🌿
               </span>
               <div>
                 <p className="font-sans font-semibold text-[13px] text-green-900 leading-none mb-0.5">
-                  500+
+                 10+ години опит
                 </p>
                 <p className="font-sans text-[11px] text-neutral-500 leading-none">
-                  доволни клиенти
+                   в подкрепа на хората
                 </p>
               </div>
             </div>

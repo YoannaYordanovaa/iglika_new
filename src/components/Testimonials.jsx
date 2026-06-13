@@ -83,6 +83,30 @@ const TESTIMONIALS = [
     color: 'bg-gold-50 text-gold-800',
     text: 'Игличе, ти си образец за поддържание със своята доброта, тактичност, сърдечно отношение, лъчезарност и знания, които щедро споделяш! Ментор, който ме зарежда с вдъхновение и положителна енергия! Винаги готова да се отзове и да помогне!! Благодарна съм, че те познавам!',
   },
+  {
+    name: 'Марияна Николова',
+    initials: 'МН',
+    color: 'bg-gold-50 text-gold-800',
+    text: 'За мен Иглика е вдъхновение, грижа и внимание! Но преди всичко тя е Добър човек!💗 Щастлива съм, че съм част от този екип! Най добрите!💗 Форевър ми даде възможност да се грижа за себе си и семейството си с  качествени и натурални продукти, а това е безценно!🙂',
+  },
+    {
+    name: 'Даниела Николова',
+    initials: 'ДН',
+    color: 'bg-gold-50 text-gold-800',
+    text: 'Много неща мога да споделя, но накратко и от мен:🥰 Изпитвам огромна благодарност за съветите, които винаги ми е давала. Аз и семейството ми имаме изключително големи подобрения в здравословен план от информацията, която винаги дава в различни области.💖',
+  },
+    {
+    name: 'Жанет Карапчанска',
+    initials: 'ЖК',
+    color: 'bg-gold-50 text-gold-800',
+    text: 'Игличето променя Вселената в едно по топло място за живот и ме учи как да помагам на другите преди всичко! 😊',
+  },
+    {
+    name: 'Василка Иванова',
+    initials: 'ВИ',
+    color: 'bg-gold-50 text-gold-800',
+    text: 'Игличе, ти си магьосница - знаеща жена, твоята усмивка сгрява всички около теб ☀️',
+  },
 ]
 
 function StarRating() {
@@ -140,6 +164,8 @@ export default function Testimonials() {
   const [sectionRef, inView] = useInView()
   const [current, setCurrent]       = useState(0)
   const [paused,  setPaused]        = useState(false)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd,   setTouchEnd]   = useState(null)
   const visibleCount = useVisibleCount()
   const total = TESTIMONIALS.length
   const maxIndex = total - visibleCount
@@ -159,6 +185,29 @@ export default function Testimonials() {
 
   const cardWidth = 100 / visibleCount
 
+  // Swipe с пръст на мобилно
+  const minSwipeDistance = 50
+
+  function onTouchStart(e) {
+    setPaused(true)
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  function onTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  function onTouchEnd() {
+    setPaused(false)
+    if (touchStart === null || touchEnd === null) return
+    const distance = touchStart - touchEnd
+    if (distance > minSwipeDistance) next()
+    if (distance < -minSwipeDistance) prev()
+    setTouchStart(null)
+    setTouchEnd(null)
+  }
+
   return (
     <section
       id="otziви"
@@ -166,11 +215,22 @@ export default function Testimonials() {
       className="bg-[#FAFAF7] py-20 sm:py-28 overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
-      <div className="max-w-content mx-auto px-5 sm:px-8">
+      <div className="max-w-content mx-auto px-5 sm:px-8 relative">
+
+         <div
+    aria-hidden="true"
+    className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full
+               bg-orange-100 opacity-60 pointer-events-none"
+  />
+  <div
+    aria-hidden="true"
+    className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full
+               bg-green-50 opacity-70 pointer-events-none"
+  />
 
         {/* Хедър */}
         <div className={[
-          'text-center mb-12 transition-all duration-700 ease-out',
+          'text-center mb-12 transition-all duration-700 ease-out relative',
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
         ].join(' ')}>
           <p className="eyebrow text-orange-600 mb-4 flex items-center justify-center gap-2">
@@ -202,7 +262,12 @@ export default function Testimonials() {
           onTouchEnd={() => setPaused(false)}
         >
           {/* Карти */}
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${current * cardWidth}%)` }}
@@ -235,7 +300,7 @@ export default function Testimonials() {
                     'rounded-full transition-all duration-300',
                     i === current
                       ? 'w-6 h-2 bg-green-600'
-                      : 'w-2 h-2 bg-neutral-300 hover:bg-green-400',
+                      : 'w-2 h-2 bg-neutral-300 hover:bg-green-600',
                   ].join(' ')}
                 />
               ))}
@@ -248,7 +313,7 @@ export default function Testimonials() {
                 aria-label="Предишен отзив"
                 className="w-9 h-9 rounded-full border border-neutral-200
                            flex items-center justify-center
-                           text-neutral-500 hover:border-green-400 hover:text-green-700
+                           text-neutral-500 hover:border-green-600 hover:text-green-700
                            transition-colors"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
@@ -262,7 +327,7 @@ export default function Testimonials() {
                 aria-label="Следващ отзив"
                 className="w-9 h-9 rounded-full border border-neutral-200
                            flex items-center justify-center
-                           text-neutral-500 hover:border-green-400 hover:text-green-700
+                           text-neutral-500 hover:border-green-600 hover:text-green-700
                            transition-colors"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"

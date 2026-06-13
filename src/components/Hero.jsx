@@ -111,7 +111,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#products"
+              href="/products"
               className="inline-flex items-center gap-1.5 border border-green-600
                          text-green-800 hover:bg-green-50 font-sans font-medium
                          text-[13.5px] px-6 py-3 rounded-pill transition-colors duration-200  rounded-4xl"

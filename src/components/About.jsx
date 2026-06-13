@@ -221,7 +221,7 @@ export default function About() {
            <div className="flex flex-col items-start lg:items-end justify-center gap-3 h-full">
               {" "}
               <a
-                href="#about"
+                href="/join"
                 className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-800
                          text-white font-sans font-semibold text-[13.5px]
                          px-6 py-3 rounded-pill transition-colors duration-200 rounded-4xl"

@@ -36,17 +36,7 @@ export default function Footer() {
               Свържи се с мен — без задължения, без натиск.
             </p>
           </div>
-          <a
-            href={VIBER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 flex items-center gap-2 hover:text-green-800
-                       text-green-600 font-sans font-semibold text-[13.5px]
-                       px-6 py-3 transition-colors duration-200"
-          >
-            <ViberIcon size={16} />
-            Свържи се сега
-          </a>
+
         </div>
       </div>
 
@@ -148,7 +138,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://instagram.com/iglika.velichkova"
+              href="https://www.instagram.com/iglikavelichkovaa/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 font-sans text-[13.5px]
@@ -161,7 +151,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=100080698834400"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 font-sans text-[13.5px]

@@ -268,11 +268,26 @@ function StickyCTA() {
 
   useEffect(() => {
     function onScroll() {
+      const scrollY = window.scrollY;
+      const viewportH = window.innerHeight;
+      const pageH = document.documentElement.scrollHeight;
+
       // Появява се след hero секцията (~80% от viewport height)
-      setVisible(window.scrollY > window.innerHeight * 0.8);
+      const pastHero = scrollY > viewportH * 0.8;
+
+      // Скрива се, когато долният край на екрана навлезе в зоната
+      // на футъра (последните ~10% от височината на страницата)
+      const nearFooter = scrollY + viewportH > pageH - viewportH * 0.1;
+
+      setVisible(pastHero && !nearFooter);
     }
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -299,7 +314,7 @@ function StickyCTA() {
         aria-hidden={!visible}
       >
         <a
-          href=""
+          href="https://thealoeveraco.shop/Mt9PQQDT"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full
@@ -325,7 +340,7 @@ function StickyCTA() {
         aria-hidden={!visible}
       >
         <a
-          href=""
+          href="https://thealoeveraco.shop/Mt9PQQDT"
           target="_blank"
           rel="noopener noreferrer"
           className="cta-pulse flex items-center gap-2
@@ -356,7 +371,7 @@ export default function JoinTeam() {
 
   return (
     <>
-      <main>
+      <main className="overflow-x-hidden">
         {/* ══ 1. HERO ════════════════════════════════════════ */}
         <section
           className="relative bg-green-50 h-[calc(100vh-4rem)] flex items-center overflow-hidden"
@@ -406,7 +421,7 @@ export default function JoinTeam() {
                          text-white font-sans font-semibold text-[13.5px]
                          px-6 py-3 rounded-pill transition-colors duration-200  rounded-4xl "
                 >
-                  Искам да разбера повече
+                  Кои са Forever Living Products?
                 </a>
                 <a
                   href="#programi"
@@ -448,10 +463,10 @@ export default function JoinTeam() {
                   id="flp-heading"
                   className="font-serif font-semibold text-green-900 text-[1.85rem] sm:text-[2.2rem] leading-[1.25] mb-5"
                 >
-                  Компания с над 45 години
+                 Световен лидер 
                   <br />
                   <em className="not-italic text-orange-600">
-                    доказано качество
+                    с над 45 години история
                   </em>
                 </h2>
                 <div className="space-y-4 mb-8">

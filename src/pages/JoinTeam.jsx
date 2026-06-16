@@ -10,12 +10,13 @@ const VIBER_URL = `viber://chat?number=%2B${VIBER_NUMBER}`;
 // ── Снимки ─────────────────────────────────────────────────────
 
 const PHOTOS = {
-  hero: "/src/assets/DSC_8880.jpg",
-  team1: "/src/assets/DSC_7407.jpeg",
-  team2: "/src/assets/2.jpg",
-  team3: "/src/assets/DSC_8880.jpg",
-  team4: "/src/assets/15.jpg",
-  team5: "/src/assets/8.jpg",
+  hero: "/src/assets/Iglika_Velichkova_Team1.webp",
+  team1: "/src/assets/Iglika_Velichkova_FLP.webp",
+  team2: "/src/assets/Iglika_Velichkova_Team3.webp",
+  team3: "/src/assets/Iglika_Velichkova_Team4.webp",
+  team4: "/src/assets/Iglika_Velichkova_JoinTeam.webp",
+  team5: "/src/assets/Iglika_Velichkova_Team5.webp",
+  team6: "/src/assets/Iglika_Velichkova_Team2.webp",
 };
 
 // ── Данни ──────────────────────────────────────────────────────
@@ -111,17 +112,17 @@ const TEAM_QUOTES = [
     color: "bg-green-50 text-green-800",
   },
   {
-    name: "Йоанна Й.",
-    role: "Супервайзор, София",
-    text: "Иглика е любов и вдъхновение за всички около себе си. За мен тя е пример за успешна жена, която не е забравила как да бъде нежна и любяща. Пример за това как любовта отваря и привидно най-здраво залостените врати. 🌸",
-    initials: "СД",
+    name: "Петя М.",
+    role: "Сеньор мениджър, София",
+    text: "Иглика е човека, който години наред е била до мен като семеен консултант и ми е помагала в трудни моменти при боледуване на моите деца и с конкретни насоки и с  безрезервното си приятелство! 🙏❤️ По -късно стана мой ментор и отново беше до мен, когато реших да поема нов път в живота си като партньор на Форевър! Благодаря ти от сърце, Игличе, за цялата обич и подкрепа, които продължаваш да даряваш! ❤️😘",
+    initials: "ПМ",
     color: "bg-gold-50 text-gold-800",
   },
   {
-    name: "Калина М.",
-    role: "Асистент директор, Бургас",
-    text: "Започнах с 0 опит. Днес имам стабилен пасивен доход и пътувам всяка година с Eagles.",
-    initials: "КМ",
+    name: "Иглика Величкова",
+    role: "Сеньор мениджър, София",
+    text: "Ако се присъединиш към моя екип с времето ще можеш да печелиш според усилията си и да бъдеш сред хора, които вярват в теб дори повече, отколкото ти вярваш в себе си.",
+    initials: "ИВ",
     color: "bg-orange-50 text-orange-700",
   },
 ];
@@ -724,17 +725,15 @@ export default function JoinTeam() {
                   className="w-full h-full"
                 />
               </div>
-              {/* Цитат карта вместо снимка */}
-              <div className="rounded-2xl bg-green-50 p-7 h-56 flex flex-col justify-between">
-                <p className="font-serif italic text-[1rem] text-gold-400 leading-[1.7]">
-                  „Ако се присъединиш към моя екип с времето ще можеш да печелиш
-                  според усилията си и да бъдеш сред хора, които вярват в теб
-                  дори повече, отколкото ти вярваш в себе си."
-                </p>
-                <p className="font-sans text-[12px] font-semibold text-gold-400 uppercase tracking-wider">
-                  — Иглика Величкова
-                </p>
+                <div className="rounded-2xl overflow-hidden h-56">
+                <Photo
+                  src={PHOTOS.team6}
+                  alt="Партньор от екипа"
+                  label="Партньор lifestyle · 600x800px"
+                  className="w-full h-full"
+                />
               </div>
+
             </div>
 
             {/* Цитати от екипа */}

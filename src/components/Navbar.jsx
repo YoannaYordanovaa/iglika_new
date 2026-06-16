@@ -13,9 +13,9 @@ function Logo() {
   return (
     <a href="/" onClick={handleClick} className="flex items-center group">
       <img
-        src="/src/assets/Logo.svg"
+        src="/src/assets/Iglika_Velichkova_Logo.svg"
         alt="Иглика Величкова"
-        className="h-60 w-auto object-contain"
+        className="h-60 w-auto ml-[-20px] object-contain"
       />
     </a>
   );
@@ -58,9 +58,9 @@ const VIBER_NUMBER = "359887663362";
 const VIBER_URL    = `viber://chat?number=%2B${VIBER_NUMBER}`;
 
 const activeClass =
-  "nav-active font-sans text-[13.5px] font-medium text-[#4A7C1F] relative pt-1";
+  "nav-active font-sans text-[13.5px] font-medium";
 const inactiveClass =
-  "nav-inactive font-sans text-[13.5px] font-medium text-[#6B6960] hover:text-[#4A7C1F] transition-colors duration-200 relative pt-1";
+  "nav-inactive font-sans text-[13.5px] font-medium transition-colors duration-200";
 
 export default function Navbar() {
   const [menuOpen,     setMenuOpen]     = useState(false);
@@ -114,25 +114,7 @@ export default function Navbar() {
 
   return (
     <>
-      <style>{`
-        .nav-active::before {
-          content: '';
-          position: absolute;
-          top: -4px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 6px;
-          height: 6px;
-          background: #D4A017;
-          border-radius: 50%;
-          animation: dotBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-        @keyframes dotBounce {
-          0%   { transform: translateX(-50%) scale(0) translateY(-4px); opacity: 0; }
-          60%  { transform: translateX(-50%) scale(1.4) translateY(2px);  opacity: 1; }
-          100% { transform: translateX(-50%) scale(1)   translateY(0);    opacity: 1; }
-        }
-      `}</style>
+      <style>{``}</style>
 
       {/* ── Navbar ───────────────────────────────────────── */}
       <header

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // Смени с реалния path след като качиш снимката в src/assets/
-const HERO_IMAGE = "/src/assets/Iglika.jpeg";
+const HERO_IMAGE = "/src/assets/Iglika_Velichkova.webp";
 
 const VIBER_NUMBER = "+359 88 766 3362";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -82,7 +82,7 @@ export default function Hero() {
                        text-neutral-600 leading-[1.75]
                        border-l-[3px] border-gold-400 pl-4 mb-7 max-w-[38ch]"
           >
-            „Тук ще откриеш вдъхновение, доказани продукти и общност
+            „Тук ще откриеш вдъхновение, продути с доказано качество и общност
             от хора, които вярват в силата на положителната промяна."
           </blockquote>
 

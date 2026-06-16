@@ -3,15 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Иглика Величкова</title>
 
-    <!-- ═══════════════════════════════════════════════════════
-         GOOGLE FONTS — Noto Serif + Montserrat с кирилица
-         
-         subset=cyrillic  → зарежда кирилски глифи
-         display=swap     → показва fallback шрифт веднага,
-                            без невидим текст при зареждане
-    ════════════════════════════════════════════════════════ -->
+    <!-- ═══ SEO ════════════════════════════════════════════════════════════ -->
+    <title>Иглика Величкова | Forever Living Products</title>
+    <meta name="description" content="Иглика Величкова — независим дистрибутор на Forever Living Products. Натурални продукти с алое вера за здраве и красота. Присъедини се към екипа." />
+    <meta name="author" content="Иглика Величкова" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Иглика Величкова, Forever Living Products, алое вера, FLP, натурални продукти, здраве, красота, България" />
+    <link rel="canonical" href="https://iglika.me" />
+
+    <!-- ═══ Open Graph (Facebook, Viber, споделяне) ════════════════════════ -->
+    <meta property="og:title" content="Иглика Величкова | Forever Living Products" />
+    <meta property="og:description" content="Натурални продукти с алое вера за здраве и красота. Открий как Forever Living може да промени живота ти." />
+    <meta property="og:image" content="https://iglika.me/src/assets/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Иглика Величкова — Forever Living Products" />
+    <meta property="og:url" content="https://iglika.me" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="bg_BG" />
+    <meta property="og:site_name" content="Иглика Величкова" />
+
+    <!-- ═══ Twitter / X Card ══════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Иглика Величкова | Forever Living Products" />
+    <meta name="twitter:description" content="Натурални продукти с алое вера за здраве и красота." />
+    <meta name="twitter:image" content="https://iglika.me/src/assets/og-image.jpg" />
+
+    <!-- ═══ Favicon & App Icons ════════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/src/assets/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Иглика" />
+
+    <!-- ═══ Theme & Brand Color ═══════════════════════════════════════════ -->
+    <meta name="theme-color" content="#4A7C1F" />
+    <meta name="msapplication-TileColor" content="#4A7C1F" />
+
+    <!-- ═══ Performance — DNS prefetch за външни домейни ══════════════════ -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://foreverliving.com" />
+
+    <!-- ═══ Google Fonts ═══════════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +54,31 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/src/index.css" />
+    <!-- ═══ Structured Data (JSON-LD) — помага на Google ══════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Иглика Величкова",
+      "url": "https://iglika.me",
+      "image": "https://iglika.me/src/assets/og-image.jpg",
+      "description": "Независим дистрибутор на Forever Living Products в България",
+      "jobTitle": "Независим дистрибутор",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Forever Living Products"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "София",
+        "addressCountry": "BG"
+      },
+      "sameAs": [
+        "https://instagram.com/iglika.velichkova",
+        "https://facebook.com"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

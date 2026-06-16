@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Блокирай ненужни пътища
+Disallow: /src/
+Disallow: /assets/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://iglika.me/sitemap.xml

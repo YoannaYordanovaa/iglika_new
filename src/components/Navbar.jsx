@@ -13,7 +13,7 @@ function Logo() {
   return (
     <a href="/" onClick={handleClick} className="flex items-center group">
       <img
-        src="/src/assets/Iglika_Velichkova_Logo.svg"
+        src="/Iglika_Velichkova_Logo.svg"
         alt="Иглика Величкова"
         className="h-60 w-auto ml-[-20px] object-contain"
       />

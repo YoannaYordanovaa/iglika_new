@@ -23,9 +23,9 @@ function useInView(threshold = 0.1) {
 }
 
 const PHOTOS = {
-  p1: "/src/assets/Iglika_Velichkova_Family.webp",
-  p2: "/src/assets/Iglika_Velichkova_Team.webp",
-  p3: "/src/assets/Iglika_Velichkova_Top4.webp",
+  p1: "/Iglika_Velichkova_Family.webp",
+  p2: "/Iglika_Velichkova_Team.webp",
+  p3: "/Iglika_Velichkova_Top4.webp",
 };
 
 const STATS = [

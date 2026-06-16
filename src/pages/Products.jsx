@@ -87,7 +87,7 @@ function ProductCard({ product }) {
                      group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
           onError={(e) => {
-            e.target.src = "/src/assets/Iglika_Velichkova_Logo.svg";
+            e.target.src = "/Iglika_Velichkova_Logo.svg";
             e.target.className = "w-16 h-16 object-contain opacity-20";
           }}
         />

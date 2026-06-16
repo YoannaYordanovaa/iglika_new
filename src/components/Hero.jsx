@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // Смени с реалния path след като качиш снимката в src/assets/
-const HERO_IMAGE = "/src/assets/Iglika_Velichkova.webp";
+const HERO_IMAGE = "/Iglika_Velichkova.webp";
 
 const VIBER_NUMBER = "+359 88 766 3362";
 const WHATSAPP_MSG = encodeURIComponent(

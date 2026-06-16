@@ -10,13 +10,13 @@ const VIBER_URL = `viber://chat?number=%2B${VIBER_NUMBER}`;
 // ── Снимки ─────────────────────────────────────────────────────
 
 const PHOTOS = {
-  hero: "/src/assets/Iglika_Velichkova_Team1.webp",
-  team1: "/src/assets/Iglika_Velichkova_FLP.webp",
-  team2: "/src/assets/Iglika_Velichkova_Team3.webp",
-  team3: "/src/assets/Iglika_Velichkova_Team4.webp",
-  team4: "/src/assets/Iglika_Velichkova_JoinTeam.webp",
-  team5: "/src/assets/Iglika_Velichkova_Team5.webp",
-  team6: "/src/assets/Iglika_Velichkova_Team2.webp",
+  hero: "/Iglika_Velichkova_Team1.webp",
+  team1: "/Iglika_Velichkova_FLP.webp",
+  team2: "/Iglika_Velichkova_Team3.webp",
+  team3: "/Iglika_Velichkova_Team4.webp",
+  team4: "/Iglika_Velichkova_JoinTeam.webp",
+  team5: "/Iglika_Velichkova_Team5.webp",
+  team6: "/Iglika_Velichkova_Team2.webp",
 };
 
 // ── Данни ──────────────────────────────────────────────────────

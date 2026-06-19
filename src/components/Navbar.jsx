@@ -286,11 +286,11 @@ export default function Navbar() {
           <span className="font-sans text-[11px] text-neutral-400 uppercase tracking-wider">
             Следвай ме
           </span>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.instagram.com/iglikavelichkovaa/" target="_blank" rel="noopener noreferrer"
              className="text-neutral-400 hover:text-orange-600 transition-colors" aria-label="Instagram">
             <InstagramIcon />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.facebook.com/profile.php?id=100080698834400" target="_blank" rel="noopener noreferrer"
              className="text-neutral-400 hover:text-green-600 transition-colors" aria-label="Facebook">
             <FacebookIcon />
           </a>
